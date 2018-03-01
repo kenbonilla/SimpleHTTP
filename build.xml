@@ -24,19 +24,7 @@
 		<mkdir dir="${classes.dir}"/>
 	</target>
 
-	<target name="build.all"
-           depends="clean,prepare,build.client,build.server"
-           description="Clean then build client and server"/>
 
-	<target name="build.client" depends="prepare"
-          description="Compile Java client sources">
-		<!-- Compile Java classes as necessary -->
-		<javac srcdir="${src.dir}/client"
-            destdir="${classes.dir}"
-            includeantruntime="false">
-
-		</javac>
-	</target>
 
 	<target name="build.server" depends="prepare"
           description="Compile Java client sources">
