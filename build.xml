@@ -8,8 +8,7 @@
 
 
 	<target name="targets">
-		<echo message="Targets are clean, prepare, build.client, build.server, targets"/>
-		<echo message="invoke client: java -cp classes: client.Client"/>
+		<echo message="Targets are clean, prepare, build.server, targets"/>
 		<echo message="invoke server: java -cp classes: server.Server port"/>
 	</target>
 
