@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<project name="HTTP server and client" default="targets">
+
+	<property name="src.dir" value="src"/>
+	<property name="classes.dir" value="classes"/>
+	<property environment="env"/>
+	<property name="ostype" value="${env.OSTYPE}"/>
+
+
+	<target name="targets">
+		<echo message="Targets are clean, prepare, build.client, build.server, targets"/>
+		<echo message="invoke client: java -cp classes: client.Client"/>
+		<echo message="invoke server: java -cp classes: server.Server port"/>
+	</target>
+
+
+
+	<target name="clean">
+		<delete dir="${classes.dir}" failonerror="false"/>
+
+	</target>
+
+	<target name="prepare">
+		<mkdir dir="${classes.dir}"/>
+	</target>
+
+	<target name="build.all"
+           depends="clean,prepare,build.client,build.server"
+           description="Clean then build client and server"/>
+
+	<target name="build.client" depends="prepare"
+          description="Compile Java client sources">
+		<!-- Compile Java classes as necessary -->
+		<javac srcdir="${src.dir}/client"
+            destdir="${classes.dir}"
+            includeantruntime="false">
+
+		</javac>
+	</target>
+
+	<target name="build.server" depends="prepare"
+          description="Compile Java client sources">
+		<!-- Compile Java classes as necessary -->
+		<javac srcdir="${src.dir}/server"
+            destdir="${classes.dir}"
+            includeantruntime="false">
+
+		</javac>
+	</target>
+	
+
+
+</project>
