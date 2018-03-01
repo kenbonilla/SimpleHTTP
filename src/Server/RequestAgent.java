@@ -131,7 +131,7 @@ public class RequestAgent implements Runnable {
                     os.flush();
                 }
             }else {
-              //Not supported because this server only understands set
+              //Not supported because this server only understands GET
                 File file_501 = new File(root, "501.html");
                 data = Files.readAllBytes(file_501.toPath());
                 head = craftHeader(header_501, header_html, data.length).getBytes(StandardCharsets.UTF_8);
